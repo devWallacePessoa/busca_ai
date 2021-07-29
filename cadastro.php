@@ -1,0 +1,132 @@
+<!--**
+ * @author Cesar Szpak - Celke -   cesar@celke.com.br
+ * @pagina desenvolvida usando https://viacep.com.br,
+ * webservice gratuito, acessado 15/07/2016.
+ *-->
+<html>
+    <head>
+    <title>ViaCEP Webservice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Adicionando Javascript -->
+    <script type="text/javascript" >
+    
+    function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('rua').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+            document.getElementById('ibge').value=("");
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('rua').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+            document.getElementById('ibge').value=(conteudo.ibge);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('rua').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+                document.getElementById('ibge').value="...";
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = '//viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body id="bodycad">
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="navlogo"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
+        <a class="navbar-brand" face="Malgun Gothic" href="#">Sobre nós</a>
+      </div>
+    </nav>
+<div id="cadastro">
+      <form method="Post" action="processa.php">   
+      <h1><font size="6" face="Malgun Gothic" id="titulocad"><center>Cadastro</center></font></h1><br>
+        <font face="Malgun Gothic" size="4">Nome:</font><input type="text" placeholder="" name="nome" id="inputcadnome">
+        &emsp;&emsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+        </svg><input type="tel" placeholder="ex. (00)90000-0000" maxlength="11" name="telefone" id="inputcadtel">
+        <br>
+        <font face="Malgun Gothic" size="4">E-mail:</font> <input type="email" placeholder="ex. abcde@xxxx.com" name="email" id="inputcademail">
+        &emsp;&emsp;
+        <label><font face="Malgun Gothic" size="4">Data de Nascimento:</font> <input type="date" name="datadenasc" id="inputcaddatanasc"></label> 
+        <br>
+        <label><font face="Malgun Gothic" size="4">CPF:</font> <input type="tel" id="cpf" value="___.___.___-__" autocomplete="on"></label> 
+        <script src="cpf.js"></script>
+        
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font face="Malgun Gothic" size="4">Senha:</font> <input type="password" placeholder="" name="senha" id="inputcadsenha">
+        <input type="password" placeholder="Confirmar Senha" name="confsenha" id="inputcadsenha">
+        <br><br><h1><font size="5" face="Malgun Gothic" id="titulocad">&emsp;&emsp;Endereço</font></h1><br>
+        <label>Cep:
+        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+               onblur="pesquisacep(this.value);" /></label><br />
+        <label>Rua:
+        <input name="rua" type="text" id="rua" size="60" /></label><br />
+        <label>Bairro:
+        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+        <label>Cidade:
+        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+        <label>Estado:
+        <input name="uf" type="text" id="uf" size="2" /></label><br />
+        <label>
+        <input name="ibge" type="hidden" id="ibge" size="8" /></label><br />
+        <label>N°
+        <input type="number" name="numero" id="inputcad"></label> <br>
+		<input type="submit" value="Cadastrar">
+      </form>
+    </div>
+    </body>
+
+    </html>

@@ -1,0 +1,153 @@
+*{margin: 0;}
+
+#titulolog{
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+#titulocad{
+    padding-left:  -5%;
+}
+
+#navlogo{
+    padding-left: 46%;
+}
+
+#inputlog{
+    width: 70%;
+    height: 45px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+    vertical-align: middle;
+}
+
+#inputcadnome{
+    width: 50%;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#inputcadtel{
+    width: 170px;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#inputcademail{
+    width: 33%;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#inputcaddatanasc{
+    width: 175px;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#cpf{
+    width: 145px;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#inputcadsenha{
+    width: 200px;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#buttonlog{
+    background: #cbeeff;
+    width: 33%;
+    height: 45px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 16pt;
+    vertical-align: middle;
+    margin: 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+#backimage{
+    background-image: url(imagens/backgroundlogin1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 0px;
+    width: 70%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+}
+
+#login{
+    vertical-align: middle;
+    right: 0;
+    background-color: whitesmoke;
+    right: 0px;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+}
+
+#bodycad{
+    background-image: url(imagens/backestoque.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#cadastro{
+    background-color: rgb(245, 245, 245,.9);
+    border-radius: 15px;
+    margin: 5% auto;
+    width: 80%;
+    height: 80%;
+    padding-top: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#cadin{
+    margin-left: 5%;
+}

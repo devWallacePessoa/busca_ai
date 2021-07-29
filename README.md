@@ -1,2 +1,2 @@
-# busca_ai
-ETEC JK DS - TCC - Projeto Busca Aí 
+# buscaai
+Controle de Estoque
