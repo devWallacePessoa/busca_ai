@@ -17,7 +17,7 @@ id int auto_increment primary key,
 nome varchar(50) not null,
 cnpj varchar(14) not null,
 id_usuario_fk unique,
-foreign key (id_usuario_fk) references Usuario(id)
+foreign key (id_usuario_fk) references usuario(id)
 );
 
 create table endereco(
@@ -46,6 +46,6 @@ id int auto_increment primary key,
 comentario text not null,
 id_usuario_comentario_fk int,
 id_produto_fk int,
-foreign key (id_usuario_comentario_fk) references Usuario(id), 
-foreign key (id_produto_fk) references Produto(id)
+foreign key (id_usuario_comentario_fk) references usuario(id), 
+foreign key (id_produto_fk) references produto(id)
 );
