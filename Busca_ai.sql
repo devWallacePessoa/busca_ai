@@ -1,54 +1,51 @@
-create database Busca_ai;
+create database banco_buscaai;
 
 
-use Busca_ai;
+use banco_buscaai;
 
-create table Usuario(
+create table usuario(
 id int auto_increment primary key,
-Nome varchar(50) not null,
-Data_nasc date,
-Email varchar(50) null,
-Senha varchar(20) not null,
-Telefone varchar(12)
+nome varchar(50) not null,
+data_nasc date,
+email varchar(50) null,
+senha varchar(20) not null,
+telefone varchar(12)
 );
 
-create table Loja(
+create table loja(
 id int auto_increment primary key,
-Nome varchar(50) not null,
+nome varchar(50) not null,
 cnpj varchar(14) not null,
-id_usuario_FK unique,
-foreign key (id_usuario_FK) references Usuario(id)
+id_usuario_fk unique,
+foreign key (id_usuario_fk) references Usuario(id)
 );
 
-create table Endereco(
+create table endereco(
 id int auto_increment primary key,
-CEP char(8) not null,
-Rua varchar(50) not null,
-Bairro varchar(50) not null,
-UF char(2),
-Numero varchar(5),
+cep char(8) not null,
+rua varchar(50) not null,
+bairro varchar(50) not null,
+uf char(2),
+numero varchar(5),
 id_loja_FK int,
-foreign key (id_loja_FK) references Loja(id)
+foreign key (id_loja_fk) references Loja(id)
 );
 
-create table Produto( 
+create table produto( 
 id int auto_increment primary key,
-Titulo varchar(50) not null,
-Categoria varchar(20) not null,
-Descricao varchar(500) not null, 
+titulo varchar(50) not null,
+categoria varchar(20) not null,
+descricao varchar(500) not null, 
 hora time not null,
-dataP date not null
+datap date not null
 );
 
 
-
-
-
-create table Comentario(
+create table comentario(
 id int auto_increment primary key,
 comentario text not null,
-id_usuario_comentario_FK int,
-id_produto_FK int,
-foreign key (id_usuario_comentario_FK) references Usuario(id), 
+id_usuario_comentario_fk int,
+id_produto_fk int,
+foreign key (id_usuario_comentario_fk) references Usuario(id), 
 foreign key (id_produto_fk) references Produto(id)
 );
