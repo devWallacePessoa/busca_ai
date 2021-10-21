@@ -15,8 +15,8 @@ telefone varchar(12)
 create table loja(
 id int auto_increment primary key,
 nome varchar(50) not null,
-cnpj varchar(14) not null,
-id_usuario_fk unique,
+cnpj varchar(14) not null unique,
+id_usuario_fk int,
 foreign key (id_usuario_fk) references usuario(id)
 );
 
@@ -27,7 +27,7 @@ rua varchar(50) not null,
 bairro varchar(50) not null,
 uf char(2),
 numero varchar(5),
-id_loja_FK int,
+id_loja_fk int,
 foreign key (id_loja_fk) references Loja(id)
 );
 
