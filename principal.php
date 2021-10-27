@@ -11,7 +11,9 @@
 <nav class="navbar fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="navlogo"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
-        <a class="navbar-brand" face="Malgun Gothic" href="#"> <input type="text" placeholder="Produto Desejado" name="pesquisa" id="pesquisa">  </a>
+        <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Paginas" aria-label="Pesquisar">
+    </form>
       </div>
     </nav>
 
@@ -23,6 +25,10 @@
       <h1 class="fw-light">LISTA DE PRODUTOS</h1>
       <p class="lead text-muted">Aqui você encontrará o seu produto desejado nos comercios locais.</p>
       <p>
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar">
+     <p> <button class="btn btn-sm btn-outline-primary" type="submit">Pesquisar</button> </p>
+    </form>
       <div class="dropdown">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Categorias
@@ -34,6 +40,7 @@
     <a class="dropdown-item" href="#">Alguma coisa aqui</a>
   </div>
 </div>
+
       </p>
     </div>
   </div>
@@ -198,7 +205,7 @@
 <footer class="text-muted bg-dark">
       <div class="container">
         <p class="float-right">
-          <a href="#">Voltar ao topo</a>
+        <a class="navbar-brand" href="/busca_ai/principal.php" id="navlogo"><img src="imagens/buscaaiminimal.png" height="117" width="117"></a>
         </p>
         <p>Este exemplo de álbum é &copy; Bootstrap, mas, por favor, baixe e customize por conta própria.</p>
         <p>Novo no BuscaAi? <a href="/busca_ai/cadastro.php">Cadastre-se</a> </P> 
