@@ -1,2 +1,0 @@
-# buscaai
-Controle de Estoque
