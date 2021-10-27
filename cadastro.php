@@ -85,7 +85,15 @@
     </head>
 
     <body id="bodycad">
-    <nav class="navbar fixed-top navbar-dark bg-dark">
+  <nav class="navbar fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="navlogo"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
+        <a class="navbar-brand" face="Malgun Gothic" href="#">Sobre nós</a>
+      </div>
+    </nav>
+
+    <body id="bodycad">
+  <nav class="navbar fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="navlogo"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
         <a class="navbar-brand" face="Malgun Gothic" href="#">Sobre nós</a>
@@ -108,25 +116,11 @@
         
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font face="Malgun Gothic" size="4">Senha:</font> <input type="password" placeholder="" name="senha" id="inputcadsenha">
         <input type="password" placeholder="Confirmar Senha" name="confsenha" id="inputcadsenha">
-        <br><br><h1><font size="5" face="Malgun Gothic" id="titulocad">&emsp;&emsp;Endereço</font></h1><br>
-        <label>Cep:
-        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-               onblur="pesquisacep(this.value);" /></label><br />
-        <label>Rua:
-        <input name="rua" type="text" id="rua" size="60" /></label><br />
-        <label>Bairro:
-        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
-        <label>Cidade:
-        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
-        <label>Estado:
-        <input name="uf" type="text" id="uf" size="2" /></label><br />
-        <label>
-        <input name="ibge" type="hidden" id="ibge" size="8" /></label><br />
-        <label>N°
-        <input type="number" name="numero" id="inputcad"></label> <br>
-		<input type="submit" value="Cadastrar">
+        
       </form>
     </div>
+    </body>
+ 
     </body>
 
     </html>

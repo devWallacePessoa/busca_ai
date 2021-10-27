@@ -1,8 +1,8 @@
 <?php
 	$servidor = "localhost";
 	$usuario = "root";
-	$dbname = "buscaai";
-	$senha = "12info#$";
+	$dbname = "banco_buscaai";
+	$senha = "";
 	
 	$conn = mysqli_connect($servidor, $usuario,$senha,$dbname);
 	if (!$conn){

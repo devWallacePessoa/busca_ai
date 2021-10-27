@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "bootstrap.php" ?>
-    <title>Document</title>
+    <title>BuscaAi</title>
 </head>
 <body>
 <nav class="navbar fixed-top navbar-dark bg-dark">
@@ -194,6 +194,20 @@
 </div>
 
 </main>
+
+<footer class="text-muted bg-dark">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Voltar ao topo</a>
+        </p>
+        <p>Este exemplo de álbum é &copy; Bootstrap, mas, por favor, baixe e customize por conta própria.</p>
+        <p>Novo no BuscaAi? <a href="/busca_ai/cadastro.php">Cadastre-se</a> </P> 
+        <p> Deseja Falar conosco? <a href="/busca_ai/faleconosco.php">Fale Conosco</a>.</p>
+        <p> Quer saber mais sobre nós e a nossa missão? <a href="/busca_ai/sobrenos.php">Sobre Nós</a>.</p>
+
+
+      </div>
+    </footer>
 
 </body>
 </html>

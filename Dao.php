@@ -2,9 +2,9 @@
 
 class Dao{
 
-    protected $dsn = "mysql:host=localhost;dbname=buscaai";
+    protected $dsn = "mysql:host=localhost;dbname=banco_buscaai";
     protected $usuario = "root";
-    protected $senha = "12info#$";
+    protected $senha = "";
     protected $dao;
 
     public function __construct(){ 
