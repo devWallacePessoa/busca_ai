@@ -7,81 +7,7 @@
     <head>
     <title>ViaCEP Webservice</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <!-- Adicionando Javascript -->
-    <script type="text/javascript" >
-    
-    function limpa_formulário_cep() {
-            //Limpa valores do formulário de cep.
-            document.getElementById('rua').value=("");
-            document.getElementById('bairro').value=("");
-            document.getElementById('cidade').value=("");
-            document.getElementById('uf').value=("");
-            document.getElementById('ibge').value=("");
-    }
-
-    function meu_callback(conteudo) {
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('rua').value=(conteudo.logradouro);
-            document.getElementById('bairro').value=(conteudo.bairro);
-            document.getElementById('cidade').value=(conteudo.localidade);
-            document.getElementById('uf').value=(conteudo.uf);
-            document.getElementById('ibge').value=(conteudo.ibge);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
-        }
-    }
-        
-    function pesquisacep(valor) {
-
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor.replace(/\D/g, '');
-
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
-
-            //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
-
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
-
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value="...";
-                document.getElementById('bairro').value="...";
-                document.getElementById('cidade').value="...";
-                document.getElementById('uf').value="...";
-                document.getElementById('ibge').value="...";
-
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
-
-                //Sincroniza com o callback.
-                script.src = '//viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
-
-            } //end if.
-            else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
-            }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
-        }
-    };
-
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <?php include "bootstrap.php"?>
     </head>
 
     <body id="bodycad">
@@ -100,7 +26,7 @@
       </div>
     </nav>
 <div id="cadastro">
-      <form method="Post" action="processa.php">   
+      <form method="Post" action="processaCadastro.php">   
       <h1><font size="6" face="Malgun Gothic" id="titulocad"><center>Cadastro</center></font></h1><br>
         <font face="Malgun Gothic" size="4">Nome:</font><input type="text" placeholder="" name="nome" id="inputcadnome">
         &emsp;&emsp;<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
@@ -109,14 +35,15 @@
         <br>
         <font face="Malgun Gothic" size="4">E-mail:</font> <input type="email" placeholder="ex. abcde@xxxx.com" name="email" id="inputcademail">
         &emsp;&emsp;
-        <label><font face="Malgun Gothic" size="4">Data de Nascimento:</font> <input type="date" name="datadenasc" id="inputcaddatanasc"></label> 
+        <label><font face="Malgun Gothic" size="4">Data de Nascimento:</font> <input type="date" name="datanasc" id="inputcaddatanasc"></label> 
         <br>
-        <label><font face="Malgun Gothic" size="4">CPF:</font> <input type="tel" id="cpf" value="___.___.___-__" autocomplete="on"></label> 
+        <label><font face="Malgun Gothic" size="4">CPF:</font> <input type="tel" id="cpf" name = "cpf" value="___.___.___-__" autocomplete="on"></label> 
         <script src="cpf.js"></script>
         
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font face="Malgun Gothic" size="4">Senha:</font> <input type="password" placeholder="" name="senha" id="inputcadsenha">
         <input type="password" placeholder="Confirmar Senha" name="confsenha" id="inputcadsenha">
         
+        <input type= "submit" value = "enviar">
       </form>
     </div>
     </body>

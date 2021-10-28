@@ -8,9 +8,12 @@ $retorno  = $dao->logar($email,$senha);
 if($retorno){
     header('Location: principal.php');
 } else { 
-    header('Location:index.php');
+
+    header('Location: errologin.php');
+   
+    
 }
 
-
+?>
 
 
