@@ -8,14 +8,31 @@
     <title>BuscaAi</title>
 </head>
 <body>
-<nav class="navbar fixed-top navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" id="navlogo"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
-        <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Paginas" aria-label="Pesquisar">
-    </form>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/busca_ai/principal.php">Principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/busca_ai/faleconosco.php">Fale Conosco</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="/busca_ai/sobrenos.php">Sobre Nós</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
 
     <main>
 
@@ -202,19 +219,7 @@
 
 </main>
 
-<footer class="text-muted bg-dark">
-      <div class="container">
-        <p class="float-right">
-        <a class="navbar-brand" href="/busca_ai/principal.php" id="navlogo"><img src="imagens/buscaaiminimal.png" height="90" width="117"></a>
-        </p>
-        <p>Este exemplo de álbum é &copy; Bootstrap, mas, por favor, baixe e customize por conta própria.</p>
-        <p>Novo no BuscaAi? <a href="/busca_ai/cadastro.php">Cadastre-se</a> </P> 
-        <p> Deseja Falar conosco? <a href="/busca_ai/faleconosco.php">Fale Conosco</a>.</p>
-        <p> Quer saber mais sobre nós e a nossa missão? <a href="/busca_ai/sobrenos.php">Sobre Nós</a>.</p>
-
-
-      </div>
-    </footer>
+<?php include "rodape.php"?>
 
 </body>
 </html>

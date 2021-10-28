@@ -9,12 +9,31 @@
 </head>
 <body>
 
-<nav class="navbar fixed-top navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/busca_ai/principal.php" id="navlogo"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
-        <a class="navbar-brand" face="Malgun Gothic" href="#">  </a>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="/busca_ai/principal.php">Principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/busca_ai/faleconosco.php">Fale Conosco</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  href="/busca_ai/sobrenos.php">Sobre Nós</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
 
     <div class="card text-center">
   <div class="card-header">
@@ -27,6 +46,8 @@
   </div>
 
 </div>
+
+<?php include "rodape.php"?>
 
 </body>
 </html>
