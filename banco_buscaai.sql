@@ -6,8 +6,8 @@ use banco_buscaai;
 create table usuario(
 id int auto_increment primary key,
 nome varchar(50) not null,
-cpf char(11) unique,
-data_nasc date not null,
+cpf char(14) unique,
+datanasc date not null,
 email varchar(50) null unique,
 senha varchar(20) not null,
 telefone char(13) not null
@@ -35,8 +35,8 @@ foreign key (id_loja_fk) references loja(id)
 create table produto( 
 id int auto_increment primary key,
 titulo varchar(50) not null,
-categoria varchar(20) not null,
-descricao varchar(500) not null, 
+categoria varchar(50) not null,
+descricao text not null, 
 hora time not null,
 datap date not null
 );

@@ -8,14 +8,18 @@
 
  $credenciais['nome'] = $_POST['nome'];
  $credenciais['cpf'] = $_POST['cpf'];
- $credenciais['data_nasc'] = $_POST['data_nasc'];
+ $credenciais['datanasc'] = $_POST['datanasc'];
  $credenciais['email'] = $_POST['email'];
  $credenciais['senha'] = $_POST['senha'];
  $credenciais['telefone'] = $_POST['telefone'];
 
  
  if($db->cadastro($credenciais)){
+    $message = "Cadastrado com sucesso";
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    
     header('Location: ./principal.php');
+    
 
  }
  else{

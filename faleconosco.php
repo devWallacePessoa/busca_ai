@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imagens/buscaaiminimal.png">
     <?php include "bootstrap.php"?>
-    <title>Fale Conosco</title>
+    <title>Document</title>
 </head>
 <body>
     
@@ -19,7 +18,7 @@
       <a class="navbar-brand" href="#"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="/busca_ai/principal.php">Principal</a>
+          <a class="nav-link " aria-current="page" href="./principal.php">Principal</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
@@ -28,7 +27,7 @@
           <a class="nav-link active" href="#">Fale Conosco</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="/busca_ai/sobrenos.php">Sobre Nós</a>
+          <a class="nav-link"  href="./sobrenos.php">Sobre Nós</a>
         </li>
       </ul>
 

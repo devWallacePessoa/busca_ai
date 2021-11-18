@@ -5,9 +5,8 @@
  *-->
 <html>
     <head>
+    <title>ViaCEP Webservice</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="icon" href="imagens/buscaaiminimal.png">
-    <title>Cadastro</title>
     <?php include "bootstrap.php"?>
     </head>
 
