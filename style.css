@@ -26,8 +26,30 @@
 }
 
 #inputcadnome{
+    width: 60%;
+    height: 35px;
+    border-radius: 30px;
+    border: 2px  solid black;
+    font-size: 13px;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#inputcadnome2{
     width: 50%;
     height: 35px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 13pt;
+    padding: 10px;
+    margin: 7px;
+    outline: 0;
+}
+
+#inputcadcat{
+    width: 50%;
+    height: 55px;
     border-radius: 30px;
     border: 2px solid black;
     font-size: 13pt;
@@ -139,6 +161,19 @@ a{
 
 #cadastro{
     background-color: rgb(245, 245, 245,.9);
+    border-radius: 15px;
+    margin: 5% auto;
+    width: 80%;
+    height: 80%;
+    padding-top: 4%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+
+#cadastroProd{
+    background-color: rgba(26, 29, 27, 0.9);
     border-radius: 15px;
     margin: 5% auto;
     width: 80%;

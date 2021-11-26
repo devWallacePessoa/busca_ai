@@ -69,5 +69,42 @@ class Dao{
 
         return $retorno;
     }
+
+    public function retornoCat()
+    {
+        $sql = "select * from categorias order by categoria";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->execute();
+        $retorno = $resultado->fetchAll();
+
+        return $retorno;
+    }
+
+    public function cadastroProdutos($dados)
+    {
+        $sql = "insert into produto values (null, :titulo, :preco, :categoria, :descricao, :hora, :datap)";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':titulo', $dados['titulo']);
+        $resultado->bindParam(':preco', $dados['preco']);
+        $resultado->bindParam(':categoria', $dados['categoria']);
+        $resultado->bindParam(':descricao', $dados['descricao']);
+        $resultado->bindParam(':hora', $dados['hora']);
+        $resultado->bindParam(':datap', $dados['datap']);
+ 
+        $retorno = $resultado->execute();
+        if(isset($retorno)) {
+            session_start();
+            $_SESSION['titulo']=$dados['titulo'];
+            $_SESSION['preco']=$dados['preco'];
+            $_SESSION['categoria']=$dados['categoria'];
+            $_SESSION['descricao']=$dados['descricao'];
+            $_SESSION['hora']= $dados['hora'];
+            $_SESSION['datap']= $dados['datap'];
+            return true;
+
+        }else {
+            return false;
+        }
+    }
     
 }

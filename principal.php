@@ -44,22 +44,13 @@ $dao = new Dao(); ?>
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">LISTA DE PRODUTOS</h1>
-      <p class="lead text-muted">Aqui você encontrará o seu produto desejado nos comercios locais.</p>
+      <p class="lead text-muted">Aqui você encontrará o seu produto desejado mais proximos a você!</p>
       <p>
       <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar">
      <p> <button class="btn btn-sm btn-outline-primary" type="submit">Pesquisar</button> </p>
     </form>
-      <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Categorias
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Alguma ação</a>
-    <a class="dropdown-item" href="#">Outra ação</a>
-    <a class="dropdown-item" href="#">Alguma coisa aqui</a>
-  </div>
+   
 </div>
 
       </p>

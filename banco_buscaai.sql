@@ -35,10 +35,18 @@ foreign key (id_loja_fk) references loja(id)
 create table produto( 
 id int auto_increment primary key,
 titulo varchar(50) not null,
+preco varchar(9) not null,
 categoria varchar(50) not null,
 descricao text not null, 
 hora time not null,
 datap date not null
+);
+
+create table imagensProduto(
+id int auto_increment primary key,
+path_img text not null,
+id_produto int,
+foreign key (id_produto) references produto(id)
 );
 
 
@@ -61,5 +69,6 @@ foreign key (id_produto_interesse_fk) references produto(id),
 foreign key (id_loja_interesse_fk) references loja(id)
 );
 
-
-
+create table categorias(
+id int auto_increment primary key,
+categoria text not null);
