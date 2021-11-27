@@ -92,6 +92,7 @@ class Dao{
         $resultado->bindParam(':datap', $dados['datap']);
  
         $retorno = $resultado->execute();
+
         if(isset($retorno)) {
             session_start();
             $_SESSION['titulo']=$dados['titulo'];
@@ -100,11 +101,29 @@ class Dao{
             $_SESSION['descricao']=$dados['descricao'];
             $_SESSION['hora']= $dados['hora'];
             $_SESSION['datap']= $dados['datap'];
+
             return true;
 
         }else {
             return false;
         }
+    }
+
+    public function Inserirfoto($caminho, $id){
+        $sql = "insert into imagensProduto values (null, :foto, :id)";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':foto', $caminho);
+        $resultado->bindParam(':id', $id);
+        $retorno = $resultado->execute();
+        if(isset($retorno)) {
+            session_start();
+            $_SESSION['path_img']=$dados['titulo'];
+            return true;
+
+        }else {
+            return false;
+        }
+
     }
     
 }

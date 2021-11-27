@@ -1,6 +1,7 @@
-# busca_ai
-ETEC JK DS - TCC - Projeto Busca Aí 
+# BuscaAi_Tcc
+Tcc Busca ai ETEC JK
+
 
 samuel teixeira dias
-wallace saymn lete pessoa
+wallace saymon leite pessoa
 vinicius jesus 

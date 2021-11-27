@@ -36,17 +36,6 @@
     outline: 0;
 }
 
-#inputcadnome2{
-    width: 50%;
-    height: 35px;
-    border-radius: 30px;
-    border: 2px solid black;
-    font-size: 13pt;
-    padding: 10px;
-    margin: 7px;
-    outline: 0;
-}
-
 #inputcadcat{
     width: 50%;
     height: 55px;
