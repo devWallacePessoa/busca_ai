@@ -70,6 +70,17 @@ class Dao{
         return $retorno;
     }
 
+    public function retornoprodutosPesquisa()
+    {
+        $sql = "select * from produto  where titulo like '%:pesquisa%' or categoria like  '%:pesquisa%' order by id desc";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':pesquisa', $_POST['pesquisa'] );
+        $resultado->execute();
+        $retorno = $resultado->fetchAll();
+
+        return $retorno;
+    }
+
     public function retornoCat()
     {
         $sql = "select * from categorias order by categoria";
@@ -80,12 +91,13 @@ class Dao{
         return $retorno;
     }
 
-    public function cadastroProdutos($dados)
+    public function cadastroProdutos($dados, $caminho)
     {
-        $sql = "insert into produto values (null, :titulo, :preco, :categoria, :descricao, :hora, :datap)";
+        $sql = "insert into produto values (null, :titulo, :preco, :img, :categoria, :descricao, :hora, :datap)";
         $resultado = $this->dao->prepare($sql);
         $resultado->bindParam(':titulo', $dados['titulo']);
         $resultado->bindParam(':preco', $dados['preco']);
+        $resultado->bindParam(':img', $caminho);
         $resultado->bindParam(':categoria', $dados['categoria']);
         $resultado->bindParam(':descricao', $dados['descricao']);
         $resultado->bindParam(':hora', $dados['hora']);
@@ -97,6 +109,7 @@ class Dao{
             session_start();
             $_SESSION['titulo']=$dados['titulo'];
             $_SESSION['preco']=$dados['preco'];
+            $_SESSION['pic']=$dados['preco'];
             $_SESSION['categoria']=$dados['categoria'];
             $_SESSION['descricao']=$dados['descricao'];
             $_SESSION['hora']= $dados['hora'];
@@ -114,16 +127,9 @@ class Dao{
         $resultado = $this->dao->prepare($sql);
         $resultado->bindParam(':foto', $caminho);
         $resultado->bindParam(':id', $id);
-        $retorno = $resultado->execute();
-        if(isset($retorno)) {
-            session_start();
-            $_SESSION['path_img']=$dados['titulo'];
-            return true;
-
-        }else {
-            return false;
-        }
-
+        $resultado->execute();
+        return true;
+ 
     }
     
 }
