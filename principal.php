@@ -45,8 +45,8 @@ $dao = new Dao(); ?>
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">LISTA DE PRODUTOS</h1>
       <p class="lead text-muted">Aqui você encontrará o seu produto desejado mais proximos a você!</p>
-      <form class="form-inline my-2 my-lg-0" action="principalPesquisa.php">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar" name="pesquisa">
+      <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar">
      <p> <button class="btn btn-sm btn-outline-primary" type="submit">Pesquisar</button> </p>
     </form>
    

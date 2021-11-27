@@ -70,17 +70,6 @@ class Dao{
         return $retorno;
     }
 
-    public function retornoprodutosPesquisa()
-    {
-        $sql = "select * from produto  where titulo like '%:pesquisa%' or categoria like  '%:pesquisa%' order by id desc";
-        $resultado = $this->dao->prepare($sql);
-        $resultado->bindParam(':pesquisa', $_POST['pesquisa'] );
-        $resultado->execute();
-        $retorno = $resultado->fetchAll();
-
-        return $retorno;
-    }
-
     public function retornoCat()
     {
         $sql = "select * from categorias order by categoria";
