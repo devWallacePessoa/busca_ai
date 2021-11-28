@@ -13,7 +13,7 @@
     Destaque
   </div>
   <div class="card-body">
-    <h5 class="card-title">Entre em contato via:</h5>
+    <h5 class="card-title">Fale conosco via:</h5>
     <p class="card-text"></p>
   </div>
   <div class="container px-4">
