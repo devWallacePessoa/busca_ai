@@ -40,14 +40,34 @@
     <div class="card text-center">
   <div class="card-header">
     Destaque
+    
   </div>
-    <div>
+    <form>
   <div class="card-body">
-    <h5 class="card-title">Título especial</h5>
-    <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-    <a href="#" class="btn btn-primary">Visitar</a>
+    <p></p>
+    <h5 class="card-title">Busca Ai</h5>
+    <div id="cadastro">  
+    <h5>O inicio</h5>
+
+        Em meio a uma pandemia mundial no ano de 2020, pequenos comércios que não conseguiam pagar uma plataforma de vendas ou um sistema proprio de venda
+      , foram os mais afetados tendo ate que baixar as portas. O BuscaAi foi projetado para atender o seu estabelecimento que precisa de ajuda para alavancar suas vendas, 
+       conseguindo divulgar sua loja e seus produtos de maneira fácil através do nosso site e aplicativo para Android e IOS, facilitando o acesso do consumidor ao item desejado.
+    <p></p>
+       <h5>Missão</h5>
+
+       <p></p>
+       <h5>Visão</h5>
+
+       <p></p>
+       <h5>Valores</h5>
+       
+       <p></p>
+    <br>
+    </p>
+    </div>
+    </div>
   </div>
-  </div>
+    </form>  
 
 </div>
 
