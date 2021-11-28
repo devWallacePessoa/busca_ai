@@ -45,7 +45,7 @@ $dao = new Dao(); ?>
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">LISTA DE PRODUTOS</h1>
       <p class="lead text-muted">Aqui você encontrará o seu produto desejado mais proximos a você!</p>
-      <form class="form-inline my-2 my-lg-0" action="principalPesquisa.php">
+      <form class="form-inline my-2 my-lg-0" action="principalPesquisa.php" method="POST">
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar" name="pesquisa">
      <p> <button class="btn btn-sm btn-outline-primary" type="submit">Pesquisar</button> </p>
     </form>
@@ -62,14 +62,16 @@ $dao = new Dao(); ?>
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <?php
-
-        $produtos = $dao->retornoprodutosPesquisa();
-
-        foreach($produtos as $linha)
-        { ?>
+        if(isset($_POST['pesquisa']))
+        {
+            $pesquisa ="%". $_POST['pesquisa'] . "%";
+            $produtos = $dao->retornoprodutosPesquisa($pesquisa);
+            //var_dump($produtos);
+            foreach($produtos as $linha)
+            { ?>
           <div class="col">
-        <div class="card shadow-sm">
-          <img src="<?php echo $linha['img_principal'] ?>"/>
+        <div class="card shadow-sm" style="width:350px">
+          <img src="<?php echo $linha['img_principal'] ?>" style="width:100%">
           <div class="card-body">
             <p class="card-text" > <b> <?php echo $linha['titulo'] ?> </b> </p>
             <p class="card-text"> R$ <?php echo $linha['preco'] ?></p>
@@ -85,6 +87,10 @@ $dao = new Dao(); ?>
         </div>
       </div> 
         <?php } 
+        }
+        else{
+            echo "deu ruim";
+        }
         
          ?>
     </div>

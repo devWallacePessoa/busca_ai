@@ -18,13 +18,13 @@ $dao = new Dao(); ?>
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="principal.php"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
+      <a class="navbar-brand" href="#"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="./principal.php">Principal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="minhaloja.php">Minha Loja</a>
+          <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./faleconosco.php">Fale Conosco</a>
@@ -45,8 +45,8 @@ $dao = new Dao(); ?>
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">LISTA DE PRODUTOS</h1>
       <p class="lead text-muted">Aqui você encontrará o seu produto desejado mais proximos a você!</p>
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar">
+      <form class="form-inline my-2 my-lg-0" action="principalPesquisa.php" method="POST">
+      <input class="form-control mr-sm-2"  type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar" name="pesquisa">
      <p> <button class="btn btn-sm btn-outline-primary" type="submit">Pesquisar</button> </p>
     </form>
    
@@ -62,6 +62,9 @@ $dao = new Dao(); ?>
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <?php
+     //session_start();
+    // $pesquisa = $_POST['pesquisa'];
+        
         $produtos = $dao->retornoprodutos();
 
         foreach($produtos as $linha)

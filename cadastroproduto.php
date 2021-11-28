@@ -36,9 +36,8 @@
         </select>
         <div id='idbody'>
         
-            <label for="conteudo">Adicione uma foto do produto</label>
+            <label for="conteudo">Adicione a principal foto do produto</label>
             <input type="file" name="pic" accept="image/*">
-            <button type="submit">Enviar imagem</button>
         </div>
         <br>
         <font face="Malgun Gothic" size="4">Descrição:</font> <br> <textarea rows="10" cols="40" maxlength="500" name="descricao" id="inputcadnome"></textarea> <br>
