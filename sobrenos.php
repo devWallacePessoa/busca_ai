@@ -19,7 +19,7 @@
       <a class="navbar-brand" href="#"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./principal.php">Pagina Principal</a>
+          <a class="nav-link" aria-current="page" href="./principal.php">Principal</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
@@ -28,7 +28,7 @@
           <a class="nav-link" href="./faleconosco.php">Fale Conosco</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="./sobrenos.php">Sobre Nós</a>
+          <a class="nav-link active"  href="./sobrenos.php">Sobre Nós</a>
         </li>
       </ul>
 
@@ -41,10 +41,12 @@
   <div class="card-header">
     Destaque
   </div>
+    <div>
   <div class="card-body">
     <h5 class="card-title">Título especial</h5>
     <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
     <a href="#" class="btn btn-primary">Visitar</a>
+  </div>
   </div>
 
 </div>

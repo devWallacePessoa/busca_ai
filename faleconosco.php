@@ -14,10 +14,20 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Entre em contato via:</h5>
-    <p class="card-text">buscaai@hotmail.com</p>
+    <p class="card-text"></p>
   </div>
-
+  <div class="container px-4">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-3 border bg-light">buscaiai@hotmail.com</div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light">(55) 11 4002-8922</div>
+    </div>
+  </div>
 </div>
+</div>
+<p></p>
 <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
