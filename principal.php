@@ -71,7 +71,7 @@ $dao = new Dao(); ?>
         { ?>
           <div class="col">
         <div class="card shadow-sm">
-          <img src="<?php echo $linha['img_principal'] ?>"/>
+         <center> <img src="<?php echo $linha['img_principal'] ?>" width="419px" height="300px"/> </center>
           <div class="card-body">
             <p class="card-text" > <b> <?php echo $linha['titulo'] ?> </b> </p>
             <p class="card-text"> R$ <?php echo $linha['preco'] ?></p>

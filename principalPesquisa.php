@@ -70,8 +70,8 @@ $dao = new Dao(); ?>
             foreach($produtos as $linha)
             { ?>
           <div class="col">
-        <div class="card shadow-sm" style="width:350px">
-          <img src="<?php echo $linha['img_principal'] ?>" style="width:100%">
+        <div class="card shadow-sm">
+         <center> <img src="<?php echo $linha['img_principal'] ?>" width="419px" height="300px"> </center>
           <div class="card-body">
             <p class="card-text" > <b> <?php echo $linha['titulo'] ?> </b> </p>
             <p class="card-text"> R$ <?php echo $linha['preco'] ?></p>
