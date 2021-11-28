@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-<?php include "rodape" ?>
+
+<div>
+
+</div>
+
+<?php include "bootstrap.php"; include "rodape.php" ?>
 
 </body>
 </html>
