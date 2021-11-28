@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
 <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +19,7 @@
       <a class="navbar-brand" href="#"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="./principal.php">Principal</a>
+          <a class="nav-link active" aria-current="page" href="./principal.php">Pagina Principal</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
@@ -27,13 +28,14 @@
           <a class="nav-link" href="./faleconosco.php">Fale Conosco</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active"  href="./sobrenos.php">Sobre Nós</a>
+          <a class="nav-link"  href="./sobrenos.php">Sobre Nós</a>
         </li>
       </ul>
 
     </div>
   </div>
 </nav>
+
 
     <div class="card text-center">
   <div class="card-header">
