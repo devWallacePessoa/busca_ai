@@ -8,14 +8,33 @@
     <title>Fale Conosco</title>
 </head>
 <body>
-    
+<div class="card text-center">
+  <div class="card-header">
+    Destaque
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Entre em contato via:</h5>
+    <p class="card-text"></p>
+  </div>
+  <div class="container px-4">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-3 border bg-light">buscaiai@hotmail.com</div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light">(55) 11 4002-8922</div>
+      <p> </p>
+    </div>
+  </div>
+</div>
+</div>
 <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
+      <a class="navbar-brand" href="./principal.php"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="./principal.php">Principal</a>
