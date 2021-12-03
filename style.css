@@ -178,3 +178,31 @@ a{
     margin-left: 5%;
 }
 
+#ml{
+    background-color: rgb(245, 245, 245,.9);
+    border-radius: 15px;
+    top: 5%;
+    width: 65%;
+    height: 500px;
+    display: inline-block;
+    position: relative;
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 3%;
+}
+
+#ml1{
+    background-color: rgb(245, 245, 245,.9);
+    border-radius: 15px;
+    top: -150px;
+    width: 26%;
+    height: 500px;
+    display: inline-block;
+    padding-top: 30px;
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
