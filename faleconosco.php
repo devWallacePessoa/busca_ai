@@ -40,10 +40,10 @@
           <a class="nav-link " aria-current="page" href="./principal.php">Principal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
+          <a class="nav-link" aria-current="page" href="./minhaloja.php">Minha Loja</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Fale Conosco</a>
+          <a class="nav-link active" href="./faleconosco.php">Fale Conosco</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"  href="./sobrenos.php">Sobre Nós</a>
