@@ -1,6 +1,8 @@
 <?php include "Dao.php"; 
 
-$dao = new Dao(); ?>
+$dao = new Dao(); 
+session_start();?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,10 +10,10 @@ $dao = new Dao(); ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include "bootstrap.php" ?>
+    <?php include "bootstrap.php";?>
     <title>BuscaAi</title>
 </head>
-<body>
+<body style= "padding-bottom: 124px; padding-top: 30px;">
 <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,9 +35,23 @@ $dao = new Dao(); ?>
           <a class="nav-link"  href="./sobrenos.php">Sobre Nós</a>
         </li>
       </ul>
-
+      <?php if(isset($_SESSION['nome'])){
+        ?>
+      <form class="d-flex" action="destruir.php">
+        <font face="Malgun Gothic" size="4" class="nav-link"><?php  echo $_SESSION['nome']; ?></font> <br>
+        <button class="btn btn-outline-warning"  type="submit" ><b>SAIR</b></button>
+      </form>
+      <?php } else { ?>
+        <form class="d-flex" action="index.php">
+        <button class="btn btn-outline-warning" type="submit"><b>ENTRAR</b></button> <br>
+        </form>
+        <form class="d-flex" action="cadastro.php">
+        <button class="btn btn-outline-warning" type="submit"><b>CADASTRAR</b></button>
+      </form>
+      <?php } ?>
     </div>
   </div>
+  
 </nav>
 
     <main>
@@ -71,7 +87,9 @@ $dao = new Dao(); ?>
         { ?>
           <div class="col">
         <div class="card shadow-sm">
-         <center> <img src="<?php echo $linha['img_principal'] ?>" width="419px" height="300px"/> </center>
+          <div clas="header-inner">
+            <center> <img src="<?php echo $linha['img_principal'] ?>" width='100%' height="300px"/> </center>
+          </div>
           <div class="card-body">
             <p class="card-text" > <b> <?php echo $linha['titulo'] ?> </b> </p>
             <p class="card-text"> R$ <?php echo $linha['preco'] ?></p>

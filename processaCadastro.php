@@ -19,7 +19,7 @@
     echo "<script type='text/javascript'>alert('$message');</script>";
     
     exit;
-    //header('Location: ./principal.php');
+   header('Location: ./principal.php');
     
 
  }
