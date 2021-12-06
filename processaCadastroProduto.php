@@ -23,6 +23,7 @@
     $credenciais['descricao'] = $_POST['descricao'];
     $credenciais['hora'] = date("H:i:s");
     $credenciais['datap'] =date("Y-m-d");
+    $credenciais['id_loja_fk'] = $_SESSION['id_loja'];
    
     
     if($dao->cadastroProdutos($credenciais, $caminho)){
