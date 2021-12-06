@@ -67,6 +67,11 @@
          <div id='ml'>
             <center><h5>Descrição</h5></center>
             <?php echo $loja['descricao'] ?>
+            <br><br><br>
+            <center> <form class="d-flex" action="cadastroproduto.php">
+  
+              <center> <button class="btn btn-outline-warning"  type="submit" ><b>CADASTRAR PRODUTO</b></button> </center>
+            </form> </center>
           </div>
            <div id='ml1'>
              <center> <aside class="profile"> <img  src="<?php echo $loja['path_img'] ?>" height="234" width="100%"> </aside> </center>
