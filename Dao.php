@@ -132,7 +132,7 @@ class Dao{
 
     public function retornoprodutosloja($id_user)
     {
-        $sql = "select * from produto where id_usuario_fk = :id order by id desc";
+        $sql = "select * from produto where id_loja_fk = :id order by id desc";
         $resultado = $this->dao->prepare($sql);
         $resultado->bindParam(':id', $id_user);
         $resultado->execute();

@@ -4,6 +4,7 @@
  require_once("./Dao.php");
  
  date_default_timezone_set("America/Sao_Paulo");
+ session_start();
  
  $dao = new Dao();
 
@@ -23,7 +24,7 @@
     $credenciais['descricao'] = $_POST['descricao'];
     $credenciais['hora'] = date("H:i:s");
     $credenciais['datap'] =date("Y-m-d");
-    $credenciais['id_loja_fk'] = $_SESSION['id_loja'];
+    $credenciais['id_loja_fk'] = $_SESSION['id_loja_fk'];
    
     
     if($dao->cadastroProdutos($credenciais, $caminho)){

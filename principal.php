@@ -13,7 +13,7 @@ session_start();?>
     <?php include "bootstrap.php";?>
     <title>BuscaAi</title>
 </head>
-<body style= "padding-bottom: 124px; padding-top: 30px;">
+<body style= "padding-bottom: 200px; padding-top: 30px;">
 <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,7 +96,6 @@ session_start();?>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-primary">Tenho Interesse</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Ofertar Agora</button>
               </div>
               <small class="text-muted"><?php echo $linha['hora'] ?></small>
               <small class="text-muted"><?php echo $linha['datap'] ?></small>

@@ -9,7 +9,7 @@
     <title>Minha Loja</title>
 </head>
 
-<body>
+<body style= "padding-bottom: 200px; padding-top: 30px;">
 <<nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     require_once("./Dao.php");
     $dao = new Dao();
     $id_user = $_SESSION['id'];
+    $id_loja = $_SESSION['id_loja_fk'];
     $loja = $dao->retornoloja($id_user); 
     $id = $_SESSION['id_loja_fk'];
     $endereco = $dao->retornoendereco($id); 
@@ -68,17 +69,54 @@
             <center><h5>Descrição</h5></center>
             <?php echo $loja['descricao'] ?>
             <br><br><br>
-            <center> <form class="d-flex" action="cadastroproduto.php">
-  
-              <center> <button class="btn btn-outline-warning"  type="submit" ><b>CADASTRAR PRODUTO</b></button> </center>
-            </form> </center>
+           
           </div>
            <div id='ml1'>
              <center> <aside class="profile"> <img  src="<?php echo $loja['path_img'] ?>" height="234" width="100%"> </aside> </center>
             <p><h5>Endereço:</h5><?php echo $endereco['rua'] ?>, <?php echo $endereco['bairro'] ?>, <?php echo $endereco['uf'] ?> <p>
             <?php echo $endereco['cep'] ?></p> 
           </div>
- 
+          
+          <br><br><br><br>
+        <div class="flex-box">
+          <h5> &nbsp &nbsp SEUS PRODUTOS<br> <p>
+          <form class="d-flex" action="cadastroproduto.php">
+  
+            <button class="btn btn-outline-warning" id="btn" type="submit" ><b>CADASTRAR PRODUTO</b></button> 
+          </form> 
+
+        </div>
+          <div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <?php       
+        $produtos = $dao->retornoprodutosloja($id_loja);
+
+        foreach($produtos as $linha)
+        { ?>
+          <div class="col">
+        <div class="card shadow-sm">
+          <div clas="header-inner">
+            <center> <img src="<?php echo $linha['img_principal'] ?>" width='100%' height="300px"/> </center>
+          </div>
+          <div class="card-body">
+            <p class="card-text" > <b> <?php echo $linha['titulo'] ?> </b> </p>
+            <p class="card-text"> R$ <?php echo $linha['preco'] ?></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-primary">Exibir produto</button>
+              </div>
+              <small class="text-muted"><?php echo $linha['hora'] ?></small>
+              <small class="text-muted"><?php echo $linha['datap'] ?></small>
+            </div>
+          </div>
+        </div>
+      </div> 
+        <?php } 
+        
+         ?>
+    </div>
+  </div>
 </div>
 
           <?php include "rodape.php"?>
