@@ -11,7 +11,7 @@ $dao = new Dao(); ?>
     <?php include "bootstrap.php" ?>
     <title>BuscaAi</title>
 </head>
-<body>
+<body style= "padding-bottom: 200px; padding-top: 30px;">
 <nav class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

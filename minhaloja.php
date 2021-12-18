@@ -126,22 +126,20 @@
     } 
     else{ ?>
       <main>
-      <div class="card-body">
-  <center> <h5 class="card-title">Você ainda não possui uma loja</h5> </center>
-  <center> <div id="cadastro">
-  <center> <h5>Cadastre-se agora e publique o seus produtos!!</h5> <center>
-
-  <center> <form class="d-flex" action="cadastroloja.php">
+<div class="card-body">
+     <center> <h5 class="card-title">Você ainda não possui uma loja</h5> </center>
+    <div id="cadastro">
+     <div class="flex-box">
+          <form class="d-flex" action="cadastroloja.php">
+             <h5 class="card-title">CADASTRE A SUA LOJA AGORA E VENDA SEUS PRODUTOS <br> <p>
+              </p> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<button class="btn btn-outline-warning" id="btn" type="submit" ><b>CADASTRAR LOJA</b></button> 
+          </form> 
+      
+      </div>
+    </div>
   
-        <center> <button class="btn btn-outline-warning"  type="submit" ><b>CADASTRAR LOJA AGORA</b></button> </center>
-   </form> </center>
-
-
-
-  </div> </center>
-  </div>
-
 </div>
+
 
 <?php include "rodape.php"?>
 

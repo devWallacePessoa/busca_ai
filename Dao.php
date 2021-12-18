@@ -142,13 +142,13 @@ class Dao{
     }
 
     public function retornoloja($id_user)
-    {
+    {   
         $sql = "select * from loja where id_usuario_fk = :id";
         $resultado = $this->dao->prepare($sql);
         $resultado->bindParam(':id', $id_user);
         $resultado->execute();
         $retorno = $resultado->fetch(PDO::FETCH_ASSOC);
-        if (isset($retorno))
+        if (isset($retorno['id']))
          {
              $_SESSION['id_loja_fk']= $retorno['id'];
          }

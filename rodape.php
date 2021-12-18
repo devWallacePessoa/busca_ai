@@ -7,7 +7,6 @@
     
      
         <div class="col-8">
-          <p>Novo no BuscaAi? <a href="./cadastro.php">Cadastre-se</a> </P> 
           <p> Deseja Falar conosco? <a href="./faleconosco.php">Fale Conosco</a>.</p>
           <p> Quer saber mais sobre nós e a nossa missão?<a href="./sobrenos.php">Sobre Nós</a>.</p>
         </div>  

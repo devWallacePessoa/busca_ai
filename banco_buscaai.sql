@@ -1,10 +1,6 @@
 create database banco_buscaai;
 
-
 use banco_buscaai;
-
-
-
 
 create table usuario(
 id int auto_increment primary key,
@@ -25,7 +21,6 @@ cnpj varchar(18) not null unique,
 id_usuario_fk int,
 foreign key (id_usuario_fk) references usuario(id)
 );
-
 
 create table endereco(
 id int auto_increment primary key,
@@ -51,18 +46,12 @@ id_loja_fk int,
 foreign key (id_loja_fk) references loja(id)
 );
 
-
-
-
 create table imagensProduto(
 id int auto_increment primary key,
 path_img text not null,
 id_produto int,
 foreign key (id_produto) references produto(id)
 );
-
-
-
 
 create table comentario(
 id int auto_increment primary key,

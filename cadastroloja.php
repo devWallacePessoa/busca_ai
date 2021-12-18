@@ -28,7 +28,7 @@
             <input type="file" name="img" accept="image/*">
         </div>
         <br>
-        <font face="Malgun Gothic" size="4">Descrição:</font> <br> <textarea rows="10" cols="40" maxlength="500" name="descricao" id="inputcadnome"></textarea> <br>
+        <font face="Malgun Gothic" size="4">Descrição:</font> <br> <textarea rows="10" cols="40" maxlength="500" name="descricao" id="inputcadnome" style="height: 150px"></textarea> <br>
         <label><font face="Malgun Gothic" size="4">CPF/CNPJ:</font> <input type="tel" id="cpf" name = "cpf" value="___.___.___-__" autocomplete="on"></label> 
         <script src="cpf.js"></script> 
         <input type= "submit" value = "enviar">
