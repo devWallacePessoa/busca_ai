@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <?php include "bootstrap.php";
      session_start();?>
     <title>Minha Loja</title>
@@ -52,11 +53,24 @@
 <?php 
     require_once("./Dao.php");
     $dao = new Dao();
-    $id_user = $_SESSION['id'];
-    $id_loja = $_SESSION['id_loja_fk'];
-    $loja = $dao->retornoloja($id_user); 
-    $id = $_SESSION['id_loja_fk'];
-    $endereco = $dao->retornoendereco($id); 
+    if(isset($_SESSION['id'])){
+      $id_user = $_SESSION['id'];
+    }
+    if(isset($_SESSION['id_loja_fk'])){
+      $id_loja = $_SESSION['id_loja_fk'];
+      $id = $_SESSION['id_loja_fk'];
+      $contato = $dao->retornocontato($id_loja);
+    }
+    if(isset($id_user)){
+      $loja = $dao->retornoloja($id_user); 
+    }
+    if(isset($id)){
+      $endereco = $dao->retornoendereco($id); 
+    }
+
+  
+
+    
 
     if(isset($loja['nome']))
     { ?>
@@ -73,8 +87,13 @@
           </div>
            <div id='ml1'>
              <center> <aside class="profile"> <img  src="<?php echo $loja['path_img'] ?>" height="234" width="100%"> </aside> </center>
-            <p><h5>Endereço:</h5><?php echo $endereco['rua'] ?>, <?php echo $endereco['bairro'] ?>, <?php echo $endereco['uf'] ?> <p>
+            <p><h5>Endereço:</h5><?php echo $endereco['rua'] ?>, <?php echo $endereco['bairro'] ?>, <?php echo $endereco['uf'] ?>,
             <?php echo $endereco['cep'] ?></p> 
+           <h5>  Contatos: </h5> 
+           Telefone: <?php echo $contato['telefone'] ?> 
+           <P> Email: <?php echo $contato['email'] ?>                            
+           <?php echo $contato['celular'] ?> |
+           <?php echo $contato['celular2'] ?>  
           </div>
           
           <br><br><br><br>
@@ -103,9 +122,23 @@
             <p class="card-text" > <b> <?php echo $linha['titulo'] ?> </b> </p>
             <p class="card-text"> R$ <?php echo $linha['preco'] ?></p>
             <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-primary">Exibir produto</button>
+              <form action="atualizacaoProduto.php" method="post">
+                <div class="btn-group">
+                <input type="hidden" value="<?php echo $linha['id'] ?>" name="MLidProduto" > 
+                <input type="hidden" value="<?php echo $linha['id_loja_fk'] ?>" name="MLid_Loja_Prod" >
+                <input type="hidden" value="<?php echo $linha['img_principal'] ?>" name="MLimg" >
+                <input type="hidden" value="<?php echo $linha['categoria'] ?>" name="MLcat" > 
+                <input type="hidden" value="<?php echo $linha['descricao'] ?>" name="MLdesc" > 
+                <input type="hidden" value="<?php echo $linha['preco'] ?>" name="MLpreco" > 
+                <input type="hidden" value="<?php echo $linha['titulo'] ?>" name="MLtitulo" > 
+                <button type="submit" class="btn btn-sm btn-outline-warning">Editar Produto</button> &nbsp
+              </form>
+              <form action="" method="POST">
+                <button type="submit" class="btn btn-sm btn-outline-danger">Excluir Produto</button>
+              </form> 
               </div>
+              
+              
               <small class="text-muted"><?php echo $linha['hora'] ?></small>
               <small class="text-muted"><?php echo $linha['datap'] ?></small>
             </div>

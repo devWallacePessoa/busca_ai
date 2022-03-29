@@ -108,6 +108,25 @@ class Dao{
         }
     }
 
+    public function cadastroContato($dados){
+        $sql = "insert into contato values(null, :email, :telefone, :celular, :celular2, :id_loja)";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':email', $dados['email']);
+        $resultado->bindParam(':telefone', $dados['telefone']);  
+        $resultado->bindParam(':celular', $dados['celular']);  
+        $resultado->bindParam(':celular2', $dados['celular2']);  
+        $resultado->bindParam(':id_loja', $dados['id_loja_fk']);  
+        $retorno = $resultado->execute();
+        if(isset($retorno)) {
+            return true;
+
+        }else {
+            return false;
+        }     
+    }
+
+    
+
     public function selectteste ()
     {
         $sql = "select * from produto";
@@ -126,6 +145,17 @@ class Dao{
         $resultado = $this->dao->prepare($sql);
         $resultado->execute();
         $retorno = $resultado->fetchAll();
+
+        return $retorno;
+    }
+
+    public function retornoProd($id_prod)
+    {
+        $sql = "select * from produto where id = :id";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id', $id_prod);
+        $resultado->execute();
+        $retorno = $resultado->fetch(PDO::FETCH_ASSOC);
 
         return $retorno;
     }
@@ -155,9 +185,32 @@ class Dao{
 
         return $retorno;
     }
+
+    public function Procuraloja($id_loja)
+    {   
+        $sql = "select * from loja where id = :id";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id', $id_loja);
+        $resultado->execute();
+        $retorno = $resultado->fetch(PDO::FETCH_ASSOC);
+        return $retorno;
+    }
+
     public function retornoendereco($id)
     {
         $sql = "select * from endereco where id_loja_fk = :id";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id', $id);
+        $resultado->execute();
+        $retorno = $resultado->fetch(PDO::FETCH_ASSOC);
+
+    
+        return $retorno;
+    }
+
+    public function retornocontato($id)
+    {
+        $sql = "select * from contato where id_loja_fk = :id";
         $resultado = $this->dao->prepare($sql);
         $resultado->bindParam(':id', $id);
         $resultado->execute();
@@ -218,6 +271,70 @@ class Dao{
         }else {
             return false;
         }
+    }
+
+    Public function AtualizarProd($dados, $caminho){
+
+        $sql = "update produto set titulo= :titulo, preco= :preco, img_principal= :img, categoria= :categoria, descricao= :descricao where id = :id";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':titulo', $dados['titulo']);
+        $resultado->bindParam(':preco', $dados['preco']);
+        $resultado->bindParam(':img', $caminho);
+        $resultado->bindParam(':categoria', $dados['categoria']);
+        $resultado->bindParam(':descricao', $dados['descricao']);
+        $resultado->bindParam(':id', $dados['id']);
+        $retorno = $resultado->execute();
+        if(isset($retorno)) {
+            return true;
+
+        }else {
+            return false;
+        }     
+
+        
+    }
+
+    public function DeletarProd($id)
+    {
+        $sql = "delet from produto where id= :id";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id', $id);
+        $retorno = $resultado->execute();
+        if(isset($retorno))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+    Public function CadastroInteresse($dados)
+    {
+        $sql = "insert into interesse values (null, :id_usuario, :id_produto, :id_loja)";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id_usuario', $dados['id_usuario_interesse_fk']);
+        $resultado->bindParam(':id_produto', $dados['id_produto_interesse_fk']);
+        $resultado->bindParam(':id_loja', $dados['id_loja_interesse_fk']);
+        $retorno = $resultado->execute();
+        if(isset($retorno)) {
+            return true;
+
+        }else {
+            return false;
+        }
+    }
+
+    Public function ProcuraCat($id)
+    {
+        $sql = "select * from categorias where id= :id";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id', $id);
+        $resultado->execute();
+        $retorno = $resultado->fetch(PDO::FETCH_ASSOC);
+
+        return $retorno;
     }
 
     public function Inserirfoto($caminho, $id){

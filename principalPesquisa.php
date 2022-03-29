@@ -1,6 +1,7 @@
 <?php include "Dao.php"; 
 
-$dao = new Dao(); ?>
+$dao = new Dao();
+session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +25,7 @@ $dao = new Dao(); ?>
           <a class="nav-link active" aria-current="page" href="./principal.php">Principal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Minha Loja</a>
+          <a class="nav-link" aria-current="page" href="./minhaloja.php">Minha Loja</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./faleconosco.php">Fale Conosco</a>
@@ -33,9 +34,23 @@ $dao = new Dao(); ?>
           <a class="nav-link"  href="./sobrenos.php">Sobre Nós</a>
         </li>
       </ul>
-
+      <?php if(isset($_SESSION['nome'])){
+        ?>
+      <form class="d-flex" action="destruir.php">
+        <font face="Malgun Gothic" size="4" class="nav-link"><?php  echo $_SESSION['nome']; ?></font> <br>
+        <button class="btn btn-outline-warning"  type="submit" ><b>SAIR</b></button>
+      </form>
+      <?php } else { ?>
+        <form class="d-flex" action="index.php">
+        <button class="btn btn-outline-warning" type="submit"><b>ENTRAR</b></button> <br>
+        </form>
+        <form class="d-flex" action="cadastro.php">
+        <button class="btn btn-outline-warning" type="submit"><b>CADASTRAR</b></button>
+      </form>
+      <?php } ?>
     </div>
   </div>
+  
 </nav>
 
     <main>
@@ -44,7 +59,7 @@ $dao = new Dao(); ?>
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">LISTA DE PRODUTOS</h1>
-      <p class="lead text-muted">Aqui você encontrará o seu produto desejado mais proximos a você!</p>
+      <p class="lead text-muted">Aqui você encontrará o seu produto desejado mais proximo a você!</p>
       <form class="form-inline my-2 my-lg-0" action="principalPesquisa.php" method="POST">
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar Produto" aria-label="Pesquisar" name="pesquisa">
      <p> <button class="btn btn-sm btn-outline-primary" type="submit">Pesquisar</button> </p>
@@ -71,15 +86,18 @@ $dao = new Dao(); ?>
             { ?>
           <div class="col">
         <div class="card shadow-sm">
-         <center> <img src="<?php echo $linha['img_principal'] ?>" width="419px" height="300px"> </center>
+          <div clas="header-inner">
+            <center> <img src="<?php echo $linha['img_principal'] ?>" width='100%' height="300px"/> </center>
+          </div>
           <div class="card-body">
             <p class="card-text" > <b> <?php echo $linha['titulo'] ?> </b> </p>
             <p class="card-text"> R$ <?php echo $linha['preco'] ?></p>
             <div class="d-flex justify-content-between align-items-center">
+            <form action="processainteresse.php">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-primary">Tenho Interesse</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Ofertar Agora</button>
+                <button type="submit" class="btn btn-sm btn-outline-primary">Tenho Interesse</button>
               </div>
+            </form>
               <small class="text-muted"><?php echo $linha['hora'] ?></small>
               <small class="text-muted"><?php echo $linha['datap'] ?></small>
             </div>

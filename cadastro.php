@@ -10,7 +10,7 @@
     <?php include "bootstrap.php"?>
     </head>
 
-    <body id="bodycad">
+    <body id="bodycad" overflow-x: hidden;>
   <nav class="navbar fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="navlogo"><img src="imagens/buscaaiwhite.png" height="22,5" width="117"></a>
