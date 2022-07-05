@@ -11,8 +11,7 @@ echo $id;
 if($dao->DeletarProd($id))
 {
     $message = "Deletado com sucesso";
-    echo "<script type='text/javascript'>alert('$message');
-    window.location = "/minhaloja.php"; </script>";
+    echo "<script type='text/javascript'>alert('$message'); </script>";
 }
 
 else
