@@ -296,17 +296,10 @@ class Dao{
 
     public function DeletarProd($id)
     {
-        $sql = "delet from produto where id= :id";
+        $sql = "delete from produto where id= :id";
         $resultado = $this->dao->prepare($sql);
         $resultado->bindParam(':id', $id);
-        $retorno = $resultado->execute();
-        if(isset($retorno))
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return $resultado->execute();
 
     }
 

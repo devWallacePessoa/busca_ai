@@ -112,7 +112,7 @@
         $produtos = $dao->retornoprodutosloja($id_loja);
 
         foreach($produtos as $linha)
-        { ?>
+        {?>
           <div class="col">
         <div class="card shadow-sm">
           <div clas="header-inner">
@@ -124,16 +124,16 @@
             <div class="d-flex justify-content-between align-items-center">
               <form action="atualizacaoProduto.php" method="post">
                 <div class="btn-group">
-                <input type="hidden" value="<?php echo $linha['id'] ?>" name="MLidProduto" > 
-                <input type="hidden" value="<?php echo $linha['id_loja_fk'] ?>" name="MLid_Loja_Prod" >
-                <input type="hidden" value="<?php echo $linha['img_principal'] ?>" name="MLimg" >
-                <input type="hidden" value="<?php echo $linha['categoria'] ?>" name="MLcat" > 
-                <input type="hidden" value="<?php echo $linha['descricao'] ?>" name="MLdesc" > 
-                <input type="hidden" value="<?php echo $linha['preco'] ?>" name="MLpreco" > 
-                <input type="hidden" value="<?php echo $linha['titulo'] ?>" name="MLtitulo" > 
+                <input type="hidden" value="<? echo $linha['id_loja_fk'] ?>" name="MLid_Loja_Prod" >
+                <input type="hidden" value="<? echo $linha['img_principal'] ?>" name="MLimg" >
+                <input type="hidden" value="<? echo $linha['categoria'] ?>" name="MLcat" > 
+                <input type="hidden" value="<? echo $linha['descricao'] ?>" name="MLdesc" > 
+                <input type="hidden" value="<? echo $linha['preco'] ?>" name="MLpreco" > 
+                <input type="hidden" value="<? echo $linha['titulo'] ?>" name="MLtitulo" > 
                 <button type="submit" class="btn btn-sm btn-outline-warning">Editar Produto</button> &nbsp
               </form>
-              <form action="" method="POST">
+              <form action="deletarProduto.php" method="POST">
+              <input type="hidden" value="<?php echo $linha['id'] ?>" name="MLidProduto" > 
                 <button type="submit" class="btn btn-sm btn-outline-danger">Excluir Produto</button>
               </form> 
               </div>
