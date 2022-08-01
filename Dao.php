@@ -220,6 +220,25 @@ class Dao{
         return $retorno;
     }
 
+    Public function retornoInteresse($id)
+    {
+        $sql = "select b.nome, b.telefone, b.email, c.titulo, d.nomeLoja from interesse a
+        inner join usuario b
+        on a.id_usuario_interesse_fk = b.id
+        inner join produto c
+        on a.id_produto_interesse_fk = c.id
+        inner join loja d
+        on a.id_loja_interesse_fk = d.id
+        where id_produto_interesse_fk = :id";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id', $id);
+        $resultado->execute();
+        $retorno = $resultado->fetchAll();
+
+        return $retorno;
+
+    }
+
     public function retornoprodutosPesquisa($pesq)
     {
         $sql = "select * from produto where titulo like :pesq or categoria like :pesq order by id desc";

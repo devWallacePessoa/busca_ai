@@ -21,7 +21,7 @@ else
     
     
  
-header('Location: minhaloja.php');
+include "minhaloja.php";
 
 ?>
 

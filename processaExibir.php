@@ -39,7 +39,7 @@ if(isset($_SESSION['id'])){
 
     $loja = $dao->Procuraloja($id_loja);
     $_SESSION['loja_img'] = $loja['path_img'];
-    $_SESSION['loja_nome'] = $loja['nome'];
+    $_SESSION['loja_nome'] = $loja['nomeLoja'];
     $_SESSION['loja_desc'] = $loja['descricao'];
     $_SESSION['loja_cnpj'] = $loja['cnpj'];
 

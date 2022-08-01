@@ -72,21 +72,16 @@
 
     
 
-    if(isset($loja['nome']))
+    if(isset($loja['nomeLoja']))
     { ?>
       <main>
          <br>
   
-        <br><br><br><center><h4><?php echo $loja['nome'] ?></h4></center>
+        <br><br><br><center><h4><?php echo $loja['nomeLoja'] ?></h4></center>
 
          <div id='ml'>
-            <center><h5>Descrição</h5></center>
-            <?php echo $loja['descricao'] ?>
-            <br><br><br>
-           
-          </div>
-           <div id='ml1'>
-             <center> <aside class="profile"> <img  src="<?php echo $loja['path_img'] ?>" height="234" width="100%"> </aside> </center>
+
+         <center> <aside class="profile"> <img  src="<?php echo $loja['path_img'] ?>" height="380" width="80%"> </aside> </center>
             <p><h5>Endereço:</h5><?php echo $endereco['rua'] ?>, <?php echo $endereco['bairro'] ?>, <?php echo $endereco['uf'] ?>,
             <?php echo $endereco['cep'] ?></p> 
            <h5>  Contatos: </h5> 
@@ -94,6 +89,14 @@
            <P> Email: <?php echo $contato['email'] ?>                            
            <?php echo $contato['celular'] ?> |
            <?php echo $contato['celular2'] ?>  
+
+            
+           
+          </div>
+           <div id='ml1'>
+           <center><h5>Descrição</h5></center>
+            <?php echo $loja['descricao'] ?>
+            <br><br><br>
           </div>
           
           <br><br><br><br>
@@ -124,23 +127,27 @@
             <div class="d-flex justify-content-between align-items-center">
               <form action="atualizacaoProduto.php" method="post">
                 <div class="btn-group">
-                <input type="hidden" value="<? echo $linha['id_loja_fk'] ?>" name="MLid_Loja_Prod" >
-                <input type="hidden" value="<? echo $linha['img_principal'] ?>" name="MLimg" >
-                <input type="hidden" value="<? echo $linha['categoria'] ?>" name="MLcat" > 
-                <input type="hidden" value="<? echo $linha['descricao'] ?>" name="MLdesc" > 
-                <input type="hidden" value="<? echo $linha['preco'] ?>" name="MLpreco" > 
-                <input type="hidden" value="<? echo $linha['titulo'] ?>" name="MLtitulo" > 
-                <button type="submit" class="btn btn-sm btn-outline-warning">Editar Produto</button> &nbsp
+                <input type="hidden" value="<?php echo $linha['id'] ?>" name="MLidProduto" > 
+                <input type="hidden" value="<?php echo $linha['id_loja_fk'] ?>" name="MLid_Loja_Prod" >
+                <input type="hidden" value="<?php echo $linha['img_principal'] ?>" name="MLimg" >
+                <input type="hidden" value="<?php echo $linha['categoria'] ?>" name="MLcat" > 
+                <input type="hidden" value="<?php echo $linha['descricao'] ?>" name="MLdesc" > 
+                <input type="hidden" value="<?php echo $linha['preco'] ?>" name="MLpreco" > 
+                <input type="hidden" value="<?php echo $linha['titulo'] ?>" name="MLtitulo" > 
+                &nbsp &nbsp<button type="submit" class="btn btn-sm btn-outline-warning">Editar Produto</button> &nbsp 
               </form>
               <form action="deletarProduto.php" method="POST">
               <input type="hidden" value="<?php echo $linha['id'] ?>" name="MLidProduto" > 
-                <button type="submit" class="btn btn-sm btn-outline-danger">Excluir Produto</button>
+              &nbsp <button type="submit" class="btn btn-sm btn-outline-danger">Excluir Produto</button> &nbsp 
               </form> 
+              <form action="verifInteresse.php" method="POST">
+                <input type="hidden" value="<?php echo $linha['id'] ?>" name="id_interesse"> 
+              &nbsp<button type="submit" class="btn btn-sm btn-outline-primary"> Ver Interesses </button> &nbsp &nbsp
+              </form>
               </div>
               
               
-              <small class="text-muted"><?php echo $linha['hora'] ?></small>
-              <small class="text-muted"><?php echo $linha['datap'] ?></small>
+            
             </div>
           </div>
         </div>
