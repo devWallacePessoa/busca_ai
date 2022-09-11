@@ -14,7 +14,7 @@
       </div>
     </nav>
 
-<div id="cadastro">
+<div id="cadastroProd">
       <form method="Post" action="processaCadastroProduto.php" enctype="multipart/form-data">   
       <h1><font size="6" face="Malgun Gothic" id="titulocad"><center>Cadastro de produtos</center></font></h1><br>
         <font face="Malgun Gothic" size="4">Titulo do Produto: <br> </font><input type="text" placeholder="" name="titulo" id="inputcadnome">
@@ -36,8 +36,13 @@
         </select>
         <div id='idbody'>
          
-            <label for="conteudo">Adicione a principal foto do produto</label>
+            <label for="conteudo">Adicione a principal foto do produto (FOTO DE EXIBIÇÃO)</label>
             <input type="file" name="pic" accept="image/*">
+        </div>
+        <div id='idbody'>
+         
+            <label for="conteudo">Adicione demais fotos do produto</label>
+            <input type="file" id="file" name="fotos[]" multiple accept="image/*" />
         </div>
         <br>
         <font face="Malgun Gothic" size="4">Descrição:</font> <br> <textarea rows="10" cols="40" maxlength="500" name="descricao" id="inputcadnome" style="max-height: 150px" ></textarea> <br>

@@ -159,25 +159,46 @@ a{
 #cadastro{
     background-color: rgb(245, 245, 245,.9);
     border-radius: 15px;
+    line-height: 80px;
     margin: 5% auto;
     width: 80%;
-    height: 80%;
-    padding-top: 4%;
+    height: 70%;
+    text-align: left;
+    padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
 
 #cadastroProd{
-    background-color: rgba(26, 29, 27, 0.9);
+    background-color: rgb(245, 245, 245,.9);
     border-radius: 15px;
+    text-align: left;
     margin: 5% auto;
     width: 80%;
-    height: 80%;
-    padding-top: 4%;
+    height: 70%;
+    padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#exibicao{
+    background-color: rgb(245, 245, 245,.9);
+    border-radius: 15px;
+    text-align: center;
+    margin: 5% auto;
+    width: 80%;
+    height: 70%;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #cadin{
@@ -186,10 +207,11 @@ a{
 
 #ml{
     background-color: rgb(245, 245, 245,.9);
+    text-align: center;
     border-radius: 15px;
     top: 5%;
     width: 65%;
-    height: 650px;
+    height: relative;
     display: inline-block;
     position: relative;
     padding-top: 30px;
@@ -200,10 +222,11 @@ a{
 
 #ml1{
     background-color: rgb(245, 245, 245,.9);
+    text-align: center;
     border-radius: 15px;
     top: -150px;
     width: 26%;
-    height: 600px;
+    height: relative;
     display: inline-block;
     padding-top: 30px;
     float: right;

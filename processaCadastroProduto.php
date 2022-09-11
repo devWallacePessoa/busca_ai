@@ -8,6 +8,8 @@
  
  $dao = new Dao();
 
+ $fotos = $_FILES['fotos'];
+
  if(isset($_FILES['pic']))
  {
     $ext = strtolower(substr($_FILES['pic']['name'],-4)); //Pegando extensão do arquivo
@@ -28,10 +30,28 @@
    
     
     if($dao->cadastroProdutos($credenciais, $caminho)){
-       $message = "Cadastrado com sucesso";
-       echo "<script type='text/javascript'>alert('$message');</script>";
+       $id_prod = $_SESSION['Last_id_Prod'];
+       for($cont = 0; $cont < count($fotos['name']); $cont++){
+         $ext = strtolower(substr($fotos['name'][$cont],-4)); //Pegando extensão do arquivo
+         $new_name = date("Y.m.d-H.i.s") . $cont . $ext; //Definindo um novo nome para o arquivo
+         $dir = './imagensProduto/'; //Diretório para uploads 
+         move_uploaded_file($fotos['tmp_name'][$cont], $dir.$new_name); //Fazer upload do arquivo
+         $caminho_imgs = $dir.$new_name;
+
+  
+         if($dao->CadastroImagens($caminho_imgs, $id_prod)){
+            $message = "Cadastrado com sucesso";
+            echo "<script type='text/javascript'>alert('$message');</script>";
        
-       header('Location: ./principal.php');
+            header('Location: ./principal.php');
+            unset($_SESSION['id_produto_img']);
+         }
+         else{
+            echo "erro imgs";
+         }
+
+      }
+       
        
    
     }

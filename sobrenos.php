@@ -57,7 +57,7 @@
   </div>
   <p></p>
   <div class="card-body">
-  <h5 class="card-title">Busca Ai</h5>
+  <h5 class="card-title"> <img src="imagens/buscaaicomplete.png" height="45" width="200"> </h5>
   <div id="cadastro">
   <h5>O inicio</h5>
 

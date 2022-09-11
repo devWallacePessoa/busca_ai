@@ -1,5 +1,6 @@
 <?php 
 
+
 class Dao{
 
     protected $dsn = "mysql:host=localhost;dbname=banco_buscaai";
@@ -21,7 +22,7 @@ class Dao{
         if($retorno['email'] == $email && $retorno['senha'] == $senha){
             if (isset($retorno))
          {
-             session_start();
+            session_start();
              $_SESSION['nome']= $retorno['nome'];
              $_SESSION['email']= $retorno['email'];
              $_SESSION['id']= $retorno['id'];
@@ -171,6 +172,17 @@ class Dao{
         return $retorno;
     }
 
+    public function retornoImagens($id_prod){
+        $sql = "select path_img from imagensproduto where id_produto = :id_prod";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':id_prod', $id_prod);
+        $resultado->execute();
+        $retorno = $resultado->fetchAll();
+
+        return $retorno;
+
+    }
+
     public function retornoloja($id_user)
     {   
         $sql = "select * from loja where id_usuario_fk = :id";
@@ -279,17 +291,33 @@ class Dao{
             session_start();
             $_SESSION['titulo']=$dados['titulo'];
             $_SESSION['preco']=$dados['preco'];
-            $_SESSION['pic']=$dados['preco'];
+            $_SESSION['pic']=$dados['img_principal'];
             $_SESSION['categoria']=$dados['categoria'];
             $_SESSION['descricao']=$dados['descricao'];
             $_SESSION['hora']= $dados['hora'];
             $_SESSION['datap']= $dados['datap'];
 
+            $_SESSION['Last_id_Prod'] = $this->dao->lastInsertId();
             return true;
 
         }else {
             return false;
         }
+    }
+
+    public function CadastroImagens ($caminho, $id)
+    {
+        $sql= "insert into imagensproduto values (null, :img, :id_prod)";
+        $resultado = $this->dao->prepare($sql);
+        $resultado->bindParam(':img', $caminho);
+        $resultado->bindParam('id_prod', $id);
+        $resultado->execute();
+        if(isset($resultado)) {
+            return true;
+
+        }else {
+            return false;
+        }     
     }
 
     Public function AtualizarProd($dados, $caminho){

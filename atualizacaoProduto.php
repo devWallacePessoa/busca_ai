@@ -25,7 +25,7 @@ $retornoProduto = $dao->retornoProd($ML_idProd);
       </div>
     </nav>
 
-<div id="cadastro">
+<div id="cadastroProd">
       <form method="Post" action="processaAtualizacao.php" enctype="multipart/form-data">   
       <h1><font size="6" face="Malgun Gothic" id="titulocad"><center>Atualização de produtos</center></font></h1><br>
         <font face="Malgun Gothic" size="4">Titulo do Produto: <br> </font><input type="text" value= "<?php echo $retornoProduto['titulo']; ?>" placeholder="" name="titulo" id="inputcadnome">

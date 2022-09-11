@@ -48,7 +48,7 @@ if($dao->cadastroEndereco($credenciais))
       </div>
     </nav>
 
-<div id="cadastro">
+<div id="cadastroProd">
   <div class="row">
     <form method="Post" action="processaContato.php" enctype="multipart/form-data">   
       

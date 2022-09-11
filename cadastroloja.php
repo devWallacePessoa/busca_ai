@@ -24,7 +24,7 @@ if(isset($_SESSION['nome']))
       </div>
     </nav>
 
-<div id="cadastro">
+<div id="cadastroProd">
   <div class="row">
     <form method="Post" action="cadastroendereco.php" enctype="multipart/form-data">   
       

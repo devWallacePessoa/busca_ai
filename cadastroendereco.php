@@ -50,7 +50,7 @@ if(isset($_FILES['img']))
       </div>
     </nav>
 
-<div id="cadastro">
+<div id="cadastroProd">
   <div class="row">
     <form method="Post" action="processaEndereco.php" enctype="multipart/form-data">   
       

@@ -15,11 +15,13 @@
 
  
  if($db->cadastro($credenciais)){
-    $message = "Cadastrado com sucesso";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    
-    exit;
-   header('Location: ./principal.php');
+  
+  $message = "Cadastrado com sucesso!";
+  echo "<script type='text/javascript'>alert('$message');</script>";
+
+
+header('Location: ./principal.php');
+exit;
     
 
  }

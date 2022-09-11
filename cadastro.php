@@ -43,7 +43,7 @@
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font face="Malgun Gothic" size="4">Senha:</font> <input type="password" placeholder="" name="senha" id="inputcadsenha">
         <input type="password" placeholder="Confirmar Senha" name="confsenha" id="inputcadsenha">
         
-        <input type= "submit" value = "enviar">
+        <button class="btn btn-outline-warning" type="submit"> Enviar </button>
       </form>
     </div>
     </body>
