@@ -90,43 +90,38 @@ if(isset($id)){
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <?php
-        
-        $produtos = $dao->retornoprodutos();
-
-        foreach($produtos as $linha)
-        { 
-           ?>
-          <div class="col">
-        <div class="card shadow-sm">
-          <div clas="header-inner">
-            <center> <img src="<?php echo $linha['img_principal']; ?>" width='100%' height="300px"/> </center>
-          </div>
-          <div class="card-body">
-            <p class="card-text" > <b> <?php echo $linha['titulo']; ?> &nbsp <?php echo $linha['id']; ?> </b> </p>
-            <p class="card-text"> R$ <?php echo $linha['preco']; ?></p>
-            <div class="d-flex justify-content-between align-items-center">
-            <form action="processaexibir.php" method="post">
-              <div class="btn-group">
-              <input type="hidden" value="<?php echo $linha['id'] ?>" name="idProduto" > 
-              <input type="hidden" value="<?php echo $linha['id_loja_fk'] ?>" name="id_Loja_Prod" >
-              <input type="hidden" value="<?php echo $linha['img_principal'] ?>" name="img" >
-              <input type="hidden" value="<?php echo $linha['categoria'] ?>" name="cat" > 
-              <input type="hidden" value="<?php echo $linha['descricao'] ?>" name="desc" > 
-              <input type="hidden" value="<?php echo $linha['preco'] ?>" name="preco" > 
-              <input type="hidden" value="<?php echo $linha['titulo'] ?>" name="titulo" > 
-                  <?php //jogando as informações em um input, e recuperando via POST no processaInteresse para armazenar na seção ?>
-                <button type="submit" class="btn btn-sm btn-outline-primary">Exibir Produto</button>
+      <?php
+      $produtos = $dao->retornoprodutos();
+      foreach($produtos as $linha){ ?>
+        <div class="col">
+          <div class="card shadow-sm">
+            <div clas="header-inner">
+              <center> <img src="<?php echo $linha['img_principal']; ?>" width='100%' height="300px"/> </center>
+            </div>
+            <div class="card-body">
+              <p class="card-text" > <b> <?php echo $linha['titulo']; ?> &nbsp <?php echo $linha['id']; ?> </b> </p>
+              <p class="card-text"> R$ <?php echo $linha['preco']; ?></p>
+              <div class="d-flex justify-content-between align-items-center">
+              <form action="processaexibir.php" method="post">
+                <div class="btn-group">
+                <input type="hidden" value="<?php echo $linha['id'] ?>" name="idProduto" > 
+                <input type="hidden" value="<?php echo $linha['id_loja_fk'] ?>" name="id_Loja_Prod" >
+                <input type="hidden" value="<?php echo $linha['img_principal'] ?>" name="img" >
+                <input type="hidden" value="<?php echo $linha['categoria'] ?>" name="cat" > 
+                <input type="hidden" value="<?php echo $linha['descricao'] ?>" name="desc" > 
+                <input type="hidden" value="<?php echo $linha['preco'] ?>" name="preco" > 
+                <input type="hidden" value="<?php echo $linha['titulo'] ?>" name="titulo" > 
+                    <?php //jogando as informações em um input, e recuperando via POST no processaInteresse para armazenar na seção ?>
+                  <button type="submit" class="btn btn-sm btn-outline-primary">Exibir Produto</button>
+                </div>
+              </form>
+                <small class="text-muted"><?php echo $linha['hora']; ?></small>
+                <small class="text-muted"><?php echo $linha['datap']; ?></small>
               </div>
-            </form>
-              <small class="text-muted"><?php echo $linha['hora']; ?></small>
-              <small class="text-muted"><?php echo $linha['datap']; ?></small>
             </div>
           </div>
-        </div>
-      </div> 
-        <?php } 
-         ?>
+        </div> 
+      <?php } ?>
     </div>
   </div>
 </div>

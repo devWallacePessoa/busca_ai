@@ -134,15 +134,27 @@
                 <input type="hidden" value="<?php echo $linha['descricao'] ?>" name="MLdesc" > 
                 <input type="hidden" value="<?php echo $linha['preco'] ?>" name="MLpreco" > 
                 <input type="hidden" value="<?php echo $linha['titulo'] ?>" name="MLtitulo" > 
-                &nbsp &nbsp<button type="submit" class="btn btn-sm btn-outline-warning">Editar Produto</button> &nbsp 
+                &nbsp &nbsp &nbsp &nbsp<button type="submit" class="btn btn-sm btn-outline-warning">Editar <br> Produto</button> &nbsp 
               </form>
               <form action="deletarProduto.php" method="POST">
               <input type="hidden" value="<?php echo $linha['id'] ?>" name="MLidProduto" > 
-              &nbsp <button type="submit" class="btn btn-sm btn-outline-danger">Excluir Produto</button> &nbsp 
+              &nbsp <button type="submit" class="btn btn-sm btn-outline-danger">Excluir <br> Produto</button> &nbsp 
               </form> 
               <form action="verifInteresse.php" method="POST">
                 <input type="hidden" value="<?php echo $linha['id'] ?>" name="id_interesse"> 
-              &nbsp<button type="submit" class="btn btn-sm btn-outline-primary"> Ver Interesses </button> &nbsp &nbsp
+              &nbsp<button type="submit" class="btn btn-sm btn-outline-success"> Ver <br> Interesses </button> &nbsp &nbsp
+              </form>
+              <form action="processaexibir.php" method="post">
+                <div class="btn-group">
+                  <input type="hidden" value="<?php echo $linha['id'] ?>" name="idProduto" > 
+                  <input type="hidden" value="<?php echo $linha['id_loja_fk'] ?>" name="id_Loja_Prod" >
+                  <input type="hidden" value="<?php echo $linha['img_principal'] ?>" name="img" >
+                  <input type="hidden" value="<?php echo $linha['categoria'] ?>" name="cat" > 
+                  <input type="hidden" value="<?php echo $linha['descricao'] ?>" name="desc" > 
+                  <input type="hidden" value="<?php echo $linha['preco'] ?>" name="preco" > 
+                  <input type="hidden" value="<?php echo $linha['titulo'] ?>" name="titulo" > 
+                  <button type="submit" class="btn btn-sm btn-outline-primary">Exibir <br> Produto </button>
+                </div> 
               </form>
               </div>
               

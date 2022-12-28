@@ -20,7 +20,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include "bootstrap.php";?>
-    <title>Interesse</title>
+    <title><?PHP echo $_SESSION['loja_nome'] ?> <?php echo $_SESSION['titulo'];?></title>
     
 </head>
 <body style= "padding-bottom: 124px;">
@@ -104,36 +104,38 @@ session_start();
                 </div>
               </div>
             </div>
+            <p> <h5> Titulo: <?php echo $_SESSION['titulo'];?> </h5> </p> 
+            <p> <h5> Categoria: <?php echo $_SESSION['cat'];?> </h5> </p>
+            <p> <h5> Preço: <?php echo $_SESSION['preco'];?> </h5> </p>
+            <p> <h5> Descrição: <br> <?php echo $_SESSION['descricao_prod'];?> </h5> </p> 
+            <hr>
+            <p> <h2> Informações da Loja: </h2> </p>
+            <div id='header-inner'>
+              <h5> <?PHP echo $_SESSION['loja_nome'] ?> </h5>
+              <h5> CNPJ/CPF: <?PHP echo $_SESSION['loja_cnpj'] ?> </h5>
+              <center>  <aside class="profile"> <img  src="<?php echo $_SESSION['loja_img'] ?>" height="400" width="500"> </aside> </center>
+              <p><h5>Endereço:</h5> <h5> <?php echo $_SESSION['end_rua'] ?>, <?php echo $_SESSION['end_numero'] ?>, <?php echo $_SESSION['end_bairro'] ?>, <?php echo $_SESSION['end_uf'] ?> <p>
+              <?php echo $_SESSION['end_cep'] ?></p>  </h5>
+              <hr>
+              <p> <h2> CONTATOS: </h2>
+              <P> <H5>Email: <?php echo $_SESSION['contato_email'] ?> </H5>
+              <P> <H5>Telefone: <?php echo $_SESSION['contato_telefone'] ?> </H5>
+              <P> <H5>Celular Principal: <?php echo $_SESSION['contato_celular'] ?> </H5>
+              <P> <H5>Celular 2: <?php echo $_SESSION['contato_celular2'] ?>  </H5>
+              <p> <h2> Descrição da loja: </h2>
+              <h5> <?php echo $_SESSION['loja_desc'];?></h5>
+              <p>
+              <div class="flex-box">
+                <form class="d-flex" action="processainteresse.php">        
+                <center> <button class="btn btn-outline-warning" id="btn" type="submit" ><b>TENHO INTERESSE</b></button> </center>
+                </form> 
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div id="exibicao">
-        <p> <h5> Titulo: <?php echo $_SESSION['titulo'];?> <h3> 
-        <p> <h5> Categoria: <?php echo $_SESSION['cat'];?> <h3> 
-        <p> <h5> Preço: <?php echo $_SESSION['preco'];?> <h3>
-        <p> <h5> Descrição: <?php echo $_SESSION['descricao_prod'];?> <h3>
-        <p> <h2> Informações da Loja: </h2>
-        <div id='header-inner'>
-          <h5> <?PHP echo $_SESSION['loja_nome'] ?> </h5>
-          <h5> CNPJ/CPF: <?PHP echo $_SESSION['loja_cnpj'] ?> </h5>
-          <center>  <aside class="profile"> <img  src="<?php echo $_SESSION['loja_img'] ?>" height="400" width="500"> </aside> </center>
-          <p><h5>Endereço:</h5> <h5> <?php echo $_SESSION['end_rua'] ?>, <?php echo $_SESSION['end_numero'] ?>, <?php echo $_SESSION['end_bairro'] ?>, <?php echo $_SESSION['end_uf'] ?> <p>
-          <?php echo $_SESSION['end_cep'] ?></p>  </h5>
-          <p> <h2> CONTATOS: </h2>
-          <P> <H5>Email: <?php echo $_SESSION['contato_email'] ?> </H5>
-          <P> <H5>Telefone: <?php echo $_SESSION['contato_telefone'] ?> </H5>
-          <P> <H5>Celular Principal: <?php echo $_SESSION['contato_celular'] ?> </H5>
-          <P> <H5>Celular 2: <?php echo $_SESSION['contato_celular2'] ?>  </H5>
-          <p> <h2> Descrição da loja: </h2>
-          <h5> <?php echo $_SESSION['loja_desc'];?></h5>
-          <p>
-          <div class="flex-box">
-            <form class="d-flex" action="processainteresse.php">        
-            <center> <button class="btn btn-outline-warning" id="btn" type="submit" ><b>TENHO INTERESSE</b></button> </center>
-            </form> 
-          </div>
-        </div>
-      </div>
+      
+       
       <p>.</p>
     </div>
   </div>

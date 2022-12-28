@@ -14,7 +14,7 @@ if(isset($_SESSION['id'])){
     $_SESSION['titulo']= $titulo;
 
     $descricao= $_POST['desc'];
-    $_SESSION['descricao_prod']= $titulo;
+    $_SESSION['descricao_prod']= $descricao;
 
     $preco = $_POST['preco'];
     $_SESSION['preco'] = $preco;
